@@ -1,0 +1,30 @@
+---
+id: Asset_Classification_Node
+title: Asset_Classification_Node
+---
+
+## Data Dictionary - Entity Table: Asset_Classification_Node
+
+
+
+
+| Create Table if NOT EXISTS| Primary Key ('id')|.|ENGINE = InnoDB|.|
+|---|---|---|---|---|
+|Table Name | Column Name| Data Type|PK Primary Key, NN-Not Null, Null|.|
+||
+| Asset_Classification_Node|`id`|BIGINT(12)|PK, NN|.|
+| Asset_Classification_Node|`Node_Name`|VARCHAR(45)|NULL|.|
+| Asset_Classification_Node|`Regime`|BIGINT(12)|NULL|.|
+| Asset_Classification_Node|`Asset_Classification_Regime_Structurecol`|BIGINT(12)|NULL|.|
+| Asset_Classification_Node|`Benchmark`|BIGINT(12)|NULL|.|
+|For Table: Asset_Classification_Node|
+|CONSTRAINT|FOREIGN KEY|REFERENCES|ON DELETE|ON UPDATE|
+| `Regime`|(`Regime`)|Asset_Classification_Regime (`id`)|NO ACTION| NO ACTION|
+| `NodeBenchmark`|(`Benchmark`)|`Benchmark` (`id`)|NO ACTION| NO ACTION|
+| For Table: Asset_Classification_Node|
+| CREATE INDEX|ON|ASC|VISABLE|.|
+|`Regime_idx`|Asset_Classification_Node|(`Regime` ASC)|VISIBLE|.|
+|`Benchmark_idx`|Asset_Classification_Node|(`Benchmark` ASC)|VISIBLE|.|
+
+
+
